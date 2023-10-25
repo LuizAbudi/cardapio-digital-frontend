@@ -3,32 +3,33 @@ import * as images from "../../assets/images/index";
 
 const Home = () => {
   return (
-    <div className="bg-wineColor ">
-      <div className="">
-        <div className="flex flex-col md:flex-row justify-between p-4">
-          <div className="flex flex-row items-center justify-start space-x-4 md:space-x-8">
-            <img
-              src={images.LogoBranca}
-              alt="Logo"
-              className="w-[150px] h-[150px] md:w-[200px] md:h-[200px]"
-            />
-            <div className="text-2xl md:text-4xl text-white ">
-              Olá,
-              <div className="text-2xl md:text-4xl text-white font-bold">
-                Seja Bem vindo(a)!
-              </div>
+    <div className="bg-wineColor min-h-screen">
+      <div className="flex flex-col md:flex-row justify-between p-4">
+        <div className="flex flex-row items-center justify-start space-x-4 md:space-x-8">
+          <img
+            src={images.LogoBranca}
+            alt="Logo"
+            className="w-[150px] h-[150px] md:w-[200px] md:h-[200px]"
+          />
+          <div className="text-2xl md:text-4xl text-white ">
+            Olá,
+            <div className="text-2xl md:text-4xl text-white font-bold">
+              Seja Bem vindo(a)!
             </div>
           </div>
         </div>
+      </div>
+      <div className="justify-center items-center">
+        {/* Título "Cardápio" */}
+        <h2 className="text-center text-4xl md:text-5xl text-white py-8">
+          Cardápio
+        </h2>
         <div className="max-w-[1640px] mx-auto justify-center p-4 py-12 grid md:grid-cols-3 gap-6">
           {/* Card */}
           <div className="rounded-xl relative">
             {/* Overlay */}
-            <div className="absolute w-full h-full bg-black/50 rounded-xl text-white">
-              <p className="font-bold text-2xl px-2 pt-4">Porções</p>
-              <button className="border-2 border-white bg-white text-black mx-2 absolute bottom-4 rounded">
-                Veja as opções
-              </button>
+            <div className="absolute flex items-center justify-center w-full h-full bg-black/50 rounded-xl text-white">
+              <p className="font-bold text-2xl text-center">Porções</p>
             </div>
             <img
               className="max-h-[160px] md:max-h-[200px] w-full object-cover rounded-xl"
@@ -39,11 +40,8 @@ const Home = () => {
           {/* Card */}
           <div className="rounded-xl relative">
             {/* Overlay */}
-            <div className="absolute w-full h-full bg-black/50 rounded-xl text-white">
+            <div className="absolute flex items-center justify-center w-full h-full bg-black/50 rounded-xl text-white">
               <p className="font-bold text-2xl px-2 pt-4">Cervejas</p>
-              <button className="border-2 border-white bg-white text-black mx-2 absolute bottom-4 rounded">
-                Veja as opções
-              </button>
             </div>
             <img
               className="max-h-[160px] md:max-h-[200px] w-full object-cover rounded-xl"
@@ -54,11 +52,8 @@ const Home = () => {
           {/* Card */}
           <div className="rounded-xl relative">
             {/* Overlay */}
-            <div className="absolute w-full h-full bg-black/50 rounded-xl text-white">
+            <div className="absolute flex items-center justify-center w-full h-full bg-black/50 rounded-xl text-white">
               <p className="font-bold text-2xl px-2 pt-4">Drinks</p>
-              <button className="border-2 border-white bg-white text-black mx-2 absolute bottom-4 rounded p-1">
-                Veja as opções
-              </button>
             </div>
             <img
               className="max-h-[160px] md:max-h-[200px] w-full object-cover rounded-xl"

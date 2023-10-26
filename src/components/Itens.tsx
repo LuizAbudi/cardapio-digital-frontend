@@ -18,17 +18,41 @@ const Itens = () => {
 
   return (
     <div>
-      <h1>Itens</h1>
+      <h1>Itens Porções</h1>
       <ul>
-        {data.map((item) => (
-          <li key={item.id}>
-            <h1>
-              {`Nome: ${item.name}`}- {`Preço: ${item.price}`} -{" "}
-              {`Categoria: ${item.category}`} -{" "}
-              {`Descrição: ${item.description}`} - {`Imagem: ${item.image}`}
-            </h1>
-          </li>
-        ))}
+        {data
+          .filter((item) => item.category === "Porções")
+          .map((item) => (
+            <li key={item.id}>
+              <h2>{item.name}</h2>
+              <p>{item.description}</p>
+              <p>{item.price}</p>
+            </li>
+          ))}
+      </ul>
+      <h1>Itens Bebidas</h1>
+      <ul>
+        {data
+          .filter((item) => item.category === "Bebidas")
+          .map((item) => (
+            <li key={item.id}>
+              <h2>{item.name}</h2>
+              <p>{item.description}</p>
+              <p>{item.price}</p>
+            </li>
+          ))}
+      </ul>
+      <h1>Itens Drinks</h1>
+      <ul>
+        {data
+          .filter((item) => item.category === "Drinks")
+          .map((item) => (
+            <li key={item.id}>
+              <h2>{item.name}</h2>
+              <p>{item.description}</p>
+              <p>{item.price}</p>
+            </li>
+          ))}
       </ul>
     </div>
   );

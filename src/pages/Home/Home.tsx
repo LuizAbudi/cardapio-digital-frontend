@@ -1,13 +1,34 @@
 import React from "react";
-import * as images from "../../assets/images/index";
+import * as logos from "../../assets/images/index";
+import CardComponent from "../../components/CardComponent";
 
 const Home = () => {
+  const data = [
+    {
+      LogoBranca: logos.LogoBranca,
+    },
+    {
+      title: "Porções",
+      image:
+        "https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+    {
+      title: "Bebidas",
+      image: "https://i.postimg.cc/qvTMj63r/2610.png",
+    },
+    {
+      title: "Drinks",
+      image:
+        "https://www.cnnbrasil.com.br/viagemegastronomia/wp-content/uploads/sites/5/2021/10/caipirinha-3483439_1920.jpg",
+    },
+  ];
+
   return (
     <div className="bg-wineColor min-h-screen">
       <div className="flex flex-col md:flex-row justify-between p-4">
         <div className="flex flex-row items-center justify-start space-x-4 md:space-x-8">
           <img
-            src={images.LogoBranca}
+            src={data[0].LogoBranca}
             alt="Logo"
             className="w-[150px] h-[150px] md:w-[200px] md:h-[200px]"
           />
@@ -25,42 +46,13 @@ const Home = () => {
           Cardápio
         </h2>
         <div className="max-w-[1640px] mx-auto justify-center p-4 py-12 grid md:grid-cols-3 gap-6">
-          {/* Card */}
-          <div className="rounded-xl relative">
-            {/* Overlay */}
-            <div className="absolute flex items-center justify-center w-full h-full bg-black/50 rounded-xl text-white">
-              <p className="font-bold text-2xl text-center">Porções</p>
-            </div>
-            <img
-              className="max-h-[160px] md:max-h-[200px] w-full object-cover rounded-xl"
-              src="https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="/"
+          {data.slice(1).map((item, index) => (
+            <CardComponent
+              key={index}
+              imageUrl={item.image as string}
+              title={item.title as string}
             />
-          </div>
-          {/* Card */}
-          <div className="rounded-xl relative">
-            {/* Overlay */}
-            <div className="absolute flex items-center justify-center w-full h-full bg-black/50 rounded-xl text-white">
-              <p className="font-bold text-2xl px-2 pt-4">Cervejas</p>
-            </div>
-            <img
-              className="max-h-[160px] md:max-h-[200px] w-full object-cover rounded-xl"
-              src="https://blog.cachacarianacional.com.br/wp-content/uploads/2018/01/copo-lagoinha-825x497-1.png"
-              alt="/"
-            />
-          </div>
-          {/* Card */}
-          <div className="rounded-xl relative">
-            {/* Overlay */}
-            <div className="absolute flex items-center justify-center w-full h-full bg-black/50 rounded-xl text-white">
-              <p className="font-bold text-2xl px-2 pt-4">Drinks</p>
-            </div>
-            <img
-              className="max-h-[160px] md:max-h-[200px] w-full object-cover rounded-xl"
-              src="https://www.cnnbrasil.com.br/viagemegastronomia/wp-content/uploads/sites/5/2021/10/caipirinha-3483439_1920.jpg"
-              alt="/"
-            />
-          </div>
+          ))}
         </div>
       </div>
     </div>

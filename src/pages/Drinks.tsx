@@ -2,8 +2,8 @@ import React from "react";
 import * as logos from "../assets/images/index";
 import Itens from "../components/Itens";
 
-const Bebidas = () => {
-  const type = "Bebidas";
+const Drinks = () => {
+  const type = "Drinks";
 
   return (
     <div className="bg-wineColor min-h-screen">
@@ -15,7 +15,7 @@ const Bebidas = () => {
             className="w-[150px] h-[150px] md:w-[200px] md:h-[200px]"
           />
           <div className="text-2xl md:text-4xl text-white font-bold">
-            Cardápio de Bebidas
+            Cardápio de Drinks
           </div>
         </div>
       </div>
@@ -26,4 +26,4 @@ const Bebidas = () => {
   );
 };
 
-export default Bebidas;
+export default Drinks;

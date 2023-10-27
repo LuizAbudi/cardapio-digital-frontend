@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import CardItem from "./CardItens";
 
-const Itens = () => {
+const Itens = ({ type }: { type: string }) => {
   const [data, setData] = useState<any[]>([]);
 
   useEffect(() => {
@@ -16,44 +17,85 @@ const Itens = () => {
     fetchData();
   }, []);
 
+  const Porcoes = () => {
+    if (type === "Porções") {
+      return (
+        <div>
+          {data
+            .filter((item) => item.category === "Porções")
+            .map((item) => (
+              <CardItem
+                key={item.id}
+                name={item.name}
+                description={item.description}
+                price={item.price}
+                imageUrl={item.image}
+              />
+            ))}
+        </div>
+      );
+    }
+    return null;
+  };
+
+  const Bebidas = () => {
+    if (type === "Bebidas") {
+      return (
+        <div className="flex flex-wrap -m-4 justify-center md: -m-2">
+          {data
+            .filter((item) => item.category === "Bebidas")
+            .map((item) => (
+              <CardItem
+                key={item.id}
+                name={item.name}
+                description={item.description}
+                price={item.price}
+                imageUrl={item.image}
+              />
+            ))}
+        </div>
+      );
+    }
+    return null;
+  };
+
+  const Drinks = () => {
+    if (type === "Drinks") {
+      return (
+        <div>
+          {data
+            .filter((item) => item.category === "Drinks")
+            .map((item) => (
+              <CardItem
+                key={item.id}
+                name={item.name}
+                description={item.description}
+                price={item.price}
+                imageUrl={item.image}
+              />
+            ))}
+        </div>
+      );
+    }
+    return null;
+  };
+
+  const returnComponent = () => {
+    if (type === "Porções") {
+      return <Porcoes />;
+    }
+    if (type === "Bebidas") {
+      return <Bebidas />;
+    }
+    if (type === "Drinks") {
+      return <Drinks />;
+    }
+    return null;
+  };
+
   return (
     <div>
-      <h1>Itens Porções</h1>
-      <ul>
-        {data
-          .filter((item) => item.category === "Porções")
-          .map((item) => (
-            <li key={item.id}>
-              <h2>{item.name}</h2>
-              <p>{item.description}</p>
-              <p>{item.price}</p>
-            </li>
-          ))}
-      </ul>
-      <h1>Itens Bebidas</h1>
-      <ul>
-        {data
-          .filter((item) => item.category === "Bebidas")
-          .map((item) => (
-            <li key={item.id}>
-              <h2>{item.name}</h2>
-              <p>{item.description}</p>
-              <p>{item.price}</p>
-            </li>
-          ))}
-      </ul>
-      <h1>Itens Drinks</h1>
-      <ul>
-        {data
-          .filter((item) => item.category === "Drinks")
-          .map((item) => (
-            <li key={item.id}>
-              <h2>{item.name}</h2>
-              <p>{item.description}</p>
-              <p>{item.price}</p>
-            </li>
-          ))}
-      </ul>
+      <ul>{returnComponent()}</ul>
     </div>
   );
 };

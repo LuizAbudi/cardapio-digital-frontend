@@ -3,6 +3,8 @@ import * as logos from "../assets/images/index";
 import Itens from "../components/Itens";
 
 const Porcoes = () => {
+  const type = "Porções";
+
   return (
     <div className="bg-wineColor min-h-screen">
       <div className="flex flex-col md:flex-row justify-between p-4">
@@ -18,7 +20,7 @@ const Porcoes = () => {
         </div>
       </div>
       <div className="justify-center items-center">
-        <Itens />
+        <Itens type={type} />
       </div>
     </div>
   );

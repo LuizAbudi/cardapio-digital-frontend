@@ -8,7 +8,9 @@ const Itens = ({ type }: { type: string }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await axios.get("http://localhost:3001/itens");
+        const result = await axios.get(
+          "https://cardapio-digital-backend-production.up.railway.app/"
+        );
         setData(result.data);
       } catch (error) {
         console.error("Erro no get dos dados", error);

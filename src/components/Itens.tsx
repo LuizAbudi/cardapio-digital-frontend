@@ -1,28 +1,40 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import CardItem from "./CardItens";
+import jsonData from "../data/data.json";
 
 const Itens = ({ type }: { type: string }) => {
   const [data, setData] = useState<any[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await axios.get(
-          "https://cardapio-digital-backend-production.up.railway.app/"
-        );
-        setData(result.data);
-      } catch (error) {
-        console.error("Erro no get dos dados", error);
-      }
+    // Função para limpar o localStorage ao fechar a página
+    const cleanupLocalStorage = () => {
+      localStorage.removeItem("menuData");
     };
-    fetchData();
+
+    // Adiciona o evento de antes de descarregar a página para limpar o localStorage
+    window.addEventListener("beforeunload", cleanupLocalStorage);
+
+    // Verifica se há dados no localStorage ao carregar a página
+    const localData = localStorage.getItem("menuData");
+    if (localData) {
+      setData(JSON.parse(localData));
+    } else {
+      // Se não houver dados no localStorage, insira os dados do jsonData
+      const jsonDataString = JSON.stringify(jsonData);
+      localStorage.setItem("menuData", jsonDataString);
+      setData(jsonData);
+    }
+
+    // Remove o evento antes de descarregar a página quando o componente é desmontado
+    return () => {
+      window.removeEventListener("beforeunload", cleanupLocalStorage);
+    };
   }, []);
 
   const Porcoes = () => {
     if (type === "Porções") {
       return (
-        <div>
+        <div className="flex flex-wrap -m-4 justify-center md:-m-2">
           {data
             .filter((item) => item.category === "Porções")
             .map((item) => (
@@ -43,7 +55,7 @@ const Itens = ({ type }: { type: string }) => {
   const Bebidas = () => {
     if (type === "Bebidas") {
       return (
-        <div className="flex flex-wrap -m-4 justify-center md: -m-2">
+        <div className="flex flex-wrap -m-4 justify-center md:-m-2">
           {data
             .filter((item) => item.category === "Bebidas")
             .map((item) => (
@@ -64,7 +76,7 @@ const Itens = ({ type }: { type: string }) => {
   const Drinks = () => {
     if (type === "Drinks") {
       return (
-        <div>
+        <div className="flex flex-wrap -m-4 justify-center md:-m-2">
           {data
             .filter((item) => item.category === "Drinks")
             .map((item) => (

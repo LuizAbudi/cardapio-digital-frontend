@@ -1,0 +1,235 @@
+[
+	{
+		"id": 1,
+		"name": "Caipirinha de limão (300ml) Cachaça/Vodka",
+		"price": 14,
+		"category": "Drinks",
+		"description": "Uma deliciosa mistura de limão, açúcar, cachaça ou vodka. Perfeita para refrescar!",
+		"image": "https://i.postimg.cc/t4Ktm2TY/caipirinha.jpg"
+	},
+	{
+		"id": 2,
+		"name": "Caipirinha de vinho (300ml)",
+		"price": 14,
+		"category": "Drinks",
+		"description": "A suavidade do vinho combinada com o sabor cítrico do limão. Uma combinação surpreendente!",
+		"image": "https://i.postimg.cc/bvqdJtVm/caipirinha-vinho.jpg"
+	},
+	{
+		"id": 3,
+		"name": "Caipireja (500ml)",
+		"price": 20,
+		"category": "Drinks",
+		"description": "Uma inovação deliciosa que combina o sabor da cerveja com o frescor da caipirinha.",
+		"image": "https://i.postimg.cc/0jhb2XhS/caipireja.jpg"
+	}, 
+	{
+		"id": 4,
+		"name": "Brahma (350ml)",
+		"price": 5,
+		"category": "Bebidas",
+		"description": "A cerveja brasileira tradicional, leve e refrescante.",
+		"image": "https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/131-cerveja-brahma-lata-350ml.jpg?s=59f260b5b86f5c3606fa2e7de9ce40f3"
+	},
+	{
+		"id": 5,
+		"name": "Brahma (600ml)",
+		"price": 7,
+		"category": "Bebidas",
+		"description": "A cerveja brasileira em sua versão de 600ml.",
+		"image": "https://cdn.formulaexpress.com.br/img/p/1/9/7/197-large_default.jpg"
+	},
+	{
+		"id": 6,
+		"name": "Brahma (litrão)",
+		"price": 10,
+		"category": "Bebidas",
+		"description": "A cerveja Brahma na versão litrão. Mais bebida para aproveitar com os amigos.",
+		"image": "https://distribuidorameg.com/wp-content/uploads/2022/12/brahma_1l.png"
+	},
+	{
+		"id": 7,
+		"name": "Heineken (600ml)",
+		"price": 15,
+		"category": "Bebidas",
+		"description": "Cerveja premium com sabor marcante e refrescante.",
+		"image": "https://hiperideal.vtexassets.com/arquivos/ids/197890/1922696.jpg?v=637855539470630000"
+	},
+	{
+		"id": 8,
+		"name": "Heineken (Longneck 330ml)",
+		"price": 10,
+		"category": "Bebidas",
+		"description": "Heineken em sua elegante versão Longneck.",
+		"image": "https://cdn.awsli.com.br/1231/1231345/produto/56408820/64708c5799.jpg"
+	},
+	{
+		"id": 9,
+		"name": "Sol (Longneck 330ml)",
+		"price": 10,
+		"category": "Bebidas",
+		"description": "Cerveja mexicana leve e ideal para dias de sol.",
+		"image": "https://static.paodeacucar.com/img/uploads/1/968/23833968.jpg"
+	},
+	{
+		"id": 10,
+		"name": "Amstel (600ml)",
+		"price": 11,
+		"category": "Bebidas",
+		"description": "Cerveja leve e saborosa, perfeita para todos os momentos.",
+		"image": "https://www.imigrantesbebidas.com.br/bebida/images/products/full/87197-cerveja-amstel-600-ml.jpg"
+	},
+	{
+		"id": 11,
+		"name": "Original (600ml)",
+		"price": 11,
+		"category": "Bebidas",
+		"description": "Cerveja brasileira premium com sabor autêntico.",
+		"image": "https://emporiodacerveja.vtexassets.com/arquivos/ids/162847/Cerveja-Antarctica-Original-600ml-Caixa-Com-12-Unidades.jpg?v=636175051536030000"
+	},
+	{
+		"id": 12,
+		"name": "Itaipava (litrão)",
+		"price": 7,
+		"category": "Bebidas",
+		"description": "Cerveja leve, ideal para festas e encontros.",
+		"image": "https://s3-sa-east-1.amazonaws.com/bluesoft-erp/pb/ecommerce/produtos/fotos/ae29fd52-192a-43c3-8c12-ddd3db0295c1/foto_large.jpg"
+	},
+	{
+		"id": 13,
+		"name": "Vinho colonial (300ml)",
+		"price": 10,
+		"category": "Bebidas",
+		"description": "Vinho tinto suave, perfeito para uma refeição especial.",
+		"image": "https://a-static.mlcdn.com.br/450x450/vinho-colonial-tinto-bordo-suave-armazem-da-colonia-pato-branco/armazemdacoloniapb/7e0718f2642111ed8ee94201ac185019/7dd11e869a0aa2bed813bb592e1be2b3.jpeg"
+	},
+	{
+		"id": 14,
+		"name": "Água Sem gás (500ml)",
+		"price": 4,
+		"category": "Bebidas",
+		"description": "Água pura e refrescante, ideal para se manter hidratado.",
+		"image": "https://static.wixstatic.com/media/2aee52_d0a933d9d6114708af2b4e685b269002~mv2.png/v1/crop/x_286,y_1,w_1352,h_1078/fill/w_722,h_422,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/2aee52_d0a933d9d6114708af2b4e685b269002~mv2.png"
+	},
+	{
+		"id": 15,
+		"name": "Água Com gás (500ml)",
+		"price": 4,
+		"category": "Bebidas",
+		"description": "Água com gás, leve e refrescante.",
+		"image": "https://static.wixstatic.com/media/2aee52_d0a933d9d6114708af2b4e685b269002~mv2.png/v1/crop/x_286,y_1,w_1352,h_1078/fill/w_722,h_422,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/2aee52_d0a933d9d6114708af2b4e685b269002~mv2.png"
+	},
+	{
+		"id": 16,
+		"name": "Água Tônica (290ml)",
+		"price": 5,
+		"category": "Bebidas",
+		"description": "Bebida carbonatada com sabor único e refrescante.",
+		"image": "https://mullerbebidas.com.br/images/virtuemart/product/tonica-290ml.png"
+	},
+	{
+		"id": 17,
+		"name": "Suco Dell Vale Uva (290ml)",
+		"price": 5,
+		"category": "Bebidas",
+		"description": "Sabor intenso e delicioso de uva.",
+		"image": "https://drogariasp.vteximg.com.br/arquivos/ids/587406-1000-1000/421855---suco-del-valle-mais-uva-290ml.jpg?v=637843444671470000"
+	},
+	{
+		"id": 18,
+		"name": "Suco Dell Vale Pêssego (290ml)",
+		"price": 5,
+		"category": "Bebidas",
+		"description": "Sabor suave e refrescante de pêssego.",
+		"image": "https://m.media-amazon.com/images/I/81ninqEiRaL.jpg"
+	},
+	{
+		"id": 19,
+		"name": "Coca (Lata)",
+		"price": 5,
+		"category": "Bebidas",
+		"description": "O sabor clássico da Coca-Cola em lata.",
+		"image": "https://biruli.com.br/cdn/shop/products/coca-cola-lata-350ml-delivery-de-bebidas-em-cabo-frio.jpg?v=1662633337"
+	},
+	 {
+        "id": 20,
+        "name": "Coca-zero (Lata)",
+        "price": 5,
+        "category": "Bebidas",
+        "description": "O sabor da Coca-Cola, agora sem açúcar.",
+        "image": "https://m.media-amazon.com/images/I/7117vbuFciL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "id": 21,
+        "name": "Fanta Uva (Lata)",
+        "price": 5,
+        "category": "Bebidas",
+        "description": "Sabor intenso e doce da uva em uma lata refrescante.",
+        "image": "https://www.imigrantesbebidas.com.br/bebida/images/products/full/1997-refrigerante-fanta-uva-lata-350ml.20230712093916.jpg"
+    },
+    {
+        "id": 22,
+        "name": "Fanta Laranja (Lata)",
+        "price": 5,
+        "category": "Bebidas",
+        "description": "O clássico sabor cítrico da Fanta Laranja.",
+        "image": "https://cdn.awsli.com.br/2500x2500/1330/1330028/produto/51587134/5e54346f8c.jpg"
+    },
+    {
+        "id": 23,
+        "name": "Guaraná (Lata)",
+        "price": 5,
+        "category": "Bebidas",
+        "description": "O sabor tradicional brasileiro do guaraná.",
+        "image": "https://www.imigrantesbebidas.com.br/bebida/images/products/full/1935-refrigerante-guarana-antarctica-lata-350ml.jpg"
+    },
+    {
+        "id": 24,
+        "name": "Sprite (Lata)",
+        "price": 5,
+        "category": "Bebidas",
+        "description": "Refrescância limão-lima em uma lata.",
+        "image": "https://www.imigrantesbebidas.com.br/bebida/images/products/full/1982-refrigerante-sprite-lata-350ml.jpg"
+    },
+    {
+        "id": 25,
+        "name": "Coca KS (290ml)",
+        "price": 4,
+        "category": "Bebidas",
+        "description": "O sabor clássico da Coca em tamanho ideal.",
+        "image": "https://img.ws.mms.shopee.com.br/b7efbad4e84391f4bfb7fdfb1f333f85"
+    },
+    {
+        "id": 26,
+        "name": "Sprite KS (290ml)",
+        "price": 4,
+        "category": "Bebidas",
+        "description": "A refrescância do limão-lima em um tamanho prático.",
+        "image": "https://nunesbebidas.com.br/wp-content/uploads/2023/06/SPRITE-GARRAFA-290-ML.jpg"
+    },
+    {
+        "id": 27,
+        "name": "Coca Garrafa (600ml)",
+        "price": 6,
+        "category": "Bebidas",
+        "description": "Aproveite mais com a Coca-Cola em garrafa de 600ml.",
+        "image": "https://storage.googleapis.com/phygital_files/copagril/uploads/produto/refrigerante_coca_cola_vidro_s_casco_600ml_fa892a14-cdf6-4712-b551-51fdfd12d5f0.png"
+    },
+    {
+        "id": 28,
+        "name": "Coca Garrafa (1 litro)",
+        "price": 8,
+        "category": "Bebidas",
+        "description": "Perfeita para compartilhar, Coca-Cola em garrafa de 1 litro.",
+        "image": "https://loja.supermerclick.com.br/image/cache/catalog/produtos-integracao/003851-omie___coca-ls-1litro__conv-1000x1000.jpg"
+    },
+    {
+        "id": 29,
+        "name": "Frango Crocante",
+        "price": 40,
+        "category": "Porções",
+        "description": "Frango perfeito para compartilhar com os amigos.",
+        "image": "https://loja.supermerclick.com.br/image/cache/catalog/produtos-integracao/003851-omie___coca-ls-1litro__conv-1000x1000.jpg"
+    }
+]
+

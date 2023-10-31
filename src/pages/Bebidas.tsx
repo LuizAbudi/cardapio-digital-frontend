@@ -1,12 +1,13 @@
 import React from "react";
 import * as logos from "../assets/images/index";
 import Itens from "../components/Itens";
+import Navigation from "../components/Navigation";
 
 const Bebidas = () => {
   const type = "Bebidas";
 
   return (
-    <div className="bg-wineColor min-h-screen">
+    <div className="bg-wineColor min-h-screen overflow-x-hidden">
       <div className="flex flex-col md:flex-row justify-between p-4">
         <div className="flex flex-row items-center justify-start space-x-4 md:space-x-8">
           <img
@@ -18,8 +19,9 @@ const Bebidas = () => {
             Cardápio de Bebidas
           </div>
         </div>
+        <Navigation />
       </div>
-      <div className="justify-center items-center">
+      <div className="justify-center items-center p-2">
         <Itens type={type} />
       </div>
     </div>

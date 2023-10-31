@@ -18,7 +18,7 @@ const CardItem: React.FC<CardItemProps> = ({
       <div className="w-1/2 p-4">
         <h2 className="text-xl font-semibold mb-2">{name}</h2>
         <p className="text-gray-600 mb-2">{description}</p>
-        <p className="text-lg font-bold text-indigo-500">
+        <p className="text-lg font-bold text-textColor2">
           R${price.toFixed(2).replace(".", ",")}
         </p>
       </div>

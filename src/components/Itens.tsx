@@ -3,7 +3,17 @@ import CardItem from "./CardItens";
 import jsonData from "../data/data.json";
 
 const Itens = ({ type }: { type: string }) => {
-  const [data, setData] = useState<any[]>([]);
+  interface DataItem {
+    id: number;
+    name: string;
+    description: string;
+    price: number;
+    subPrice?: number | undefined;
+    image: string;
+    category: string;
+  }
+
+  const [data, setData] = useState<DataItem[]>([]);
 
   useEffect(() => {
     // Função para limpar o localStorage ao fechar a página
@@ -43,6 +53,7 @@ const Itens = ({ type }: { type: string }) => {
                 name={item.name}
                 description={item.description}
                 price={item.price}
+                subPrice={item.subPrice}
                 imageUrl={item.image}
               />
             ))}

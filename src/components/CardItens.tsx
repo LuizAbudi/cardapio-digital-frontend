@@ -4,6 +4,7 @@ interface CardItemProps {
   name: string;
   description: string;
   price: number;
+  subPrice?: number;
   imageUrl: string;
 }
 
@@ -11,15 +12,37 @@ const CardItem: React.FC<CardItemProps> = ({
   name,
   description,
   price,
+  subPrice,
   imageUrl,
 }) => {
+
+  const formattedPrice = (
+    <div>
+      <p>Inteira: R$ {price.toFixed(2).replace(".", ",")}</p>
+      {subPrice && <p>Meia: R$ {subPrice.toFixed(2).replace(".", ",")}</p>}
+    </div>
+  );
+
+  const formattedPrice2 = (
+    <div>
+      <p>R$ {price.toFixed(2).replace(".", ",")}</p>  
+    </div>
+  );
+
+  const whitchPrice = () => {
+    if (subPrice) {
+      return formattedPrice;
+    }
+    return formattedPrice2;
+  }
+
   return (
     <div className="p-4 shadow-lg rounded-lg max-w-lg m-4 flex bg-white w-full md:w-1/2 lg:w-1/3">
       <div className="w-1/2 p-4">
         <h2 className="text-xl font-semibold mb-2">{name}</h2>
         <p className="text-gray-600 mb-2">{description}</p>
-        <p className="text-lg font-bold text-textColor2">
-          R${price.toFixed(2).replace(".", ",")}
+        <p className="text-lg font-bold text-textColor2">          
+          {whitchPrice()}
         </p>
       </div>
       <div className="w-1/2 relative bg-white">

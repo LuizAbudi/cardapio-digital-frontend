@@ -22,7 +22,7 @@
 		"category": "Drinks",
 		"description": "Uma inovação deliciosa que combina o sabor da cerveja com o frescor da caipirinha.",
 		"image": "https://i.postimg.cc/0jhb2XhS/caipireja.jpg"
-	}, 
+	},
 	{
 		"id": 4,
 		"name": "Brahma (350ml)",
@@ -151,85 +151,219 @@
 		"description": "O sabor clássico da Coca-Cola em lata.",
 		"image": "https://biruli.com.br/cdn/shop/products/coca-cola-lata-350ml-delivery-de-bebidas-em-cabo-frio.jpg?v=1662633337"
 	},
-	 {
-        "id": 20,
-        "name": "Coca-zero (Lata)",
-        "price": 5,
-        "category": "Bebidas",
-        "description": "O sabor da Coca-Cola, agora sem açúcar.",
-        "image": "https://m.media-amazon.com/images/I/7117vbuFciL._AC_UF1000,1000_QL80_.jpg"
-    },
-    {
-        "id": 21,
-        "name": "Fanta Uva (Lata)",
-        "price": 5,
-        "category": "Bebidas",
-        "description": "Sabor intenso e doce da uva em uma lata refrescante.",
-        "image": "https://www.imigrantesbebidas.com.br/bebida/images/products/full/1997-refrigerante-fanta-uva-lata-350ml.20230712093916.jpg"
-    },
-    {
-        "id": 22,
-        "name": "Fanta Laranja (Lata)",
-        "price": 5,
-        "category": "Bebidas",
-        "description": "O clássico sabor cítrico da Fanta Laranja.",
-        "image": "https://cdn.awsli.com.br/2500x2500/1330/1330028/produto/51587134/5e54346f8c.jpg"
-    },
-    {
-        "id": 23,
-        "name": "Guaraná (Lata)",
-        "price": 5,
-        "category": "Bebidas",
-        "description": "O sabor tradicional brasileiro do guaraná.",
-        "image": "https://www.imigrantesbebidas.com.br/bebida/images/products/full/1935-refrigerante-guarana-antarctica-lata-350ml.jpg"
-    },
-    {
-        "id": 24,
-        "name": "Sprite (Lata)",
-        "price": 5,
-        "category": "Bebidas",
-        "description": "Refrescância limão-lima em uma lata.",
-        "image": "https://www.imigrantesbebidas.com.br/bebida/images/products/full/1982-refrigerante-sprite-lata-350ml.jpg"
-    },
-    {
-        "id": 25,
-        "name": "Coca KS (290ml)",
-        "price": 4,
-        "category": "Bebidas",
-        "description": "O sabor clássico da Coca em tamanho ideal.",
-        "image": "https://img.ws.mms.shopee.com.br/b7efbad4e84391f4bfb7fdfb1f333f85"
-    },
-    {
-        "id": 26,
-        "name": "Sprite KS (290ml)",
-        "price": 4,
-        "category": "Bebidas",
-        "description": "A refrescância do limão-lima em um tamanho prático.",
-        "image": "https://nunesbebidas.com.br/wp-content/uploads/2023/06/SPRITE-GARRAFA-290-ML.jpg"
-    },
-    {
-        "id": 27,
-        "name": "Coca Garrafa (600ml)",
-        "price": 6,
-        "category": "Bebidas",
-        "description": "Aproveite mais com a Coca-Cola em garrafa de 600ml.",
-        "image": "https://storage.googleapis.com/phygital_files/copagril/uploads/produto/refrigerante_coca_cola_vidro_s_casco_600ml_fa892a14-cdf6-4712-b551-51fdfd12d5f0.png"
-    },
-    {
-        "id": 28,
-        "name": "Coca Garrafa (1 litro)",
-        "price": 8,
-        "category": "Bebidas",
-        "description": "Perfeita para compartilhar, Coca-Cola em garrafa de 1 litro.",
-        "image": "https://loja.supermerclick.com.br/image/cache/catalog/produtos-integracao/003851-omie___coca-ls-1litro__conv-1000x1000.jpg"
-    },
-    {
-        "id": 29,
-        "name": "Frango Crocante",
-        "price": 40,
-        "category": "Porções",
-        "description": "Frango perfeito para compartilhar com os amigos.",
-        "image": "https://loja.supermerclick.com.br/image/cache/catalog/produtos-integracao/003851-omie___coca-ls-1litro__conv-1000x1000.jpg"
-    }
+	{
+		"id": 20,
+		"name": "Coca-zero (Lata)",
+		"price": 5,
+		"category": "Bebidas",
+		"description": "O sabor da Coca-Cola, agora sem açúcar.",
+		"image": "https://m.media-amazon.com/images/I/7117vbuFciL._AC_UF1000,1000_QL80_.jpg"
+	},
+	{
+		"id": 21,
+		"name": "Fanta Uva (Lata)",
+		"price": 5,
+		"category": "Bebidas",
+		"description": "Sabor intenso e doce da uva em uma lata refrescante.",
+		"image": "https://www.imigrantesbebidas.com.br/bebida/images/products/full/1997-refrigerante-fanta-uva-lata-350ml.20230712093916.jpg"
+	},
+	{
+		"id": 22,
+		"name": "Fanta Laranja (Lata)",
+		"price": 5,
+		"category": "Bebidas",
+		"description": "O clássico sabor cítrico da Fanta Laranja.",
+		"image": "https://cdn.awsli.com.br/2500x2500/1330/1330028/produto/51587134/5e54346f8c.jpg"
+	},
+	{
+		"id": 23,
+		"name": "Guaraná (Lata)",
+		"price": 5,
+		"category": "Bebidas",
+		"description": "O sabor tradicional brasileiro do guaraná.",
+		"image": "https://www.imigrantesbebidas.com.br/bebida/images/products/full/1935-refrigerante-guarana-antarctica-lata-350ml.jpg"
+	},
+	{
+		"id": 24,
+		"name": "Sprite (Lata)",
+		"price": 5,
+		"category": "Bebidas",
+		"description": "Refrescância limão-lima em uma lata.",
+		"image": "https://www.imigrantesbebidas.com.br/bebida/images/products/full/1982-refrigerante-sprite-lata-350ml.jpg"
+	},
+	{
+		"id": 25,
+		"name": "Coca KS (290ml)",
+		"price": 4,
+		"category": "Bebidas",
+		"description": "O sabor clássico da Coca em tamanho ideal.",
+		"image": "https://img.ws.mms.shopee.com.br/b7efbad4e84391f4bfb7fdfb1f333f85"
+	},
+	{
+		"id": 26,
+		"name": "Sprite KS (290ml)",
+		"price": 4,
+		"category": "Bebidas",
+		"description": "A refrescância do limão-lima em um tamanho prático.",
+		"image": "https://nunesbebidas.com.br/wp-content/uploads/2023/06/SPRITE-GARRAFA-290-ML.jpg"
+	},
+	{
+		"id": 27,
+		"name": "Coca Garrafa (600ml)",
+		"price": 6,
+		"category": "Bebidas",
+		"description": "Aproveite mais com a Coca-Cola em garrafa de 600ml.",
+		"image": "https://storage.googleapis.com/phygital_files/copagril/uploads/produto/refrigerante_coca_cola_vidro_s_casco_600ml_fa892a14-cdf6-4712-b551-51fdfd12d5f0.png"
+	},
+	{
+		"id": 28,
+		"name": "Coca Garrafa (1 litro)",
+		"price": 8,
+		"category": "Bebidas",
+		"description": "Perfeita para compartilhar, Coca-Cola em garrafa de 1 litro.",
+		"image": "https://loja.supermerclick.com.br/image/cache/catalog/produtos-integracao/003851-omie___coca-ls-1litro__conv-1000x1000.jpg"
+	},
+	{
+		"id": 29,
+		"name": "Frango Crocante",
+		"price": 40,
+		"subPrice": 28,
+		"category": "Porções",
+		"description": "Frango empanado na farinha panko, crocante e saboroso.",
+		"image": "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+	},
+	{
+		"id": 30,
+		"name": "Torresmo",
+		"price": 30,
+		"subPrice": 20,
+		"category": "Porções",
+		"description": "Porção de torresmo crocante e saboroso.",
+		"image": "https://i.postimg.cc/tJC1jVNL/torresmo.jpg"
+	},
+	{
+		"id": 31,
+		"name": "Filé de Tilápia",
+		"price": 50,
+		"subPrice": 33,
+		"category": "Porções",
+		"description": "Porção de filé de tilápia empanado e frito.",
+		"image": "https://i.postimg.cc/bJ6y1V1B/tilapia.jpg"
+	},
+	{
+		"id": 32,
+		"name": "Batata Frita Especial",
+		"price": 29,
+		"subPrice": 20,
+		"category": "Porções",
+		"description": "Porção de batata frita com Cheddar e Bacon",
+		"image": "https://i.postimg.cc/bNPPshXw/batata-especial.jpg"
+	},
+	{
+		"id": 33,
+		"name": "Polenta Frita",
+		"price": 18,
+		"subPrice": 12,
+		"category": "Porções",
+		"description": "Porção de polenta frita crocante e saborosa.",
+		"image": "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+	},
+	{
+		"id": 34,
+		"name": "Mandioca",
+		"price": 18,
+		"subPrice": 10,
+		"category": "Porções",
+		"description": "Porção de mandioca frita crocante e saborosa.",
+		"image": "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+	},
+	{
+		"id": 35,
+		"name": "Batata Frita",
+		"price": 22,
+		"subPrice": 15,
+		"category": "Porções",
+		"description": "Porção de Batata frita simples",
+		"image": "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+	},
+	{
+		"id": 36,
+		"name": "Calabresa Acebolada",
+		"price": 20,
+		"subPrice": 29,
+		"category": "Porções",
+		"description": "Porção de calabresa acebolada.",
+		"image": "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+	},
+	{
+		"id": 37,
+		"name": "Calabresa Caramelizada",
+		"price": 35,
+		"subPrice": 23,
+		"category": "Porções",
+		"description": "Porção de calabresa caramelizada com cebola.",
+		"image": "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+	},
+	{
+		"id": 38,
+		"name": "Costelinha de porco",
+		"price": 48,
+		"subPrice": 32,
+		"category": "Porções",
+		"description": "Porção de costelinha de porco frita e crocante.",
+		"image": "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+	},
+	{
+		"id": 39,
+		"name": "Coxinha da asa",
+		"price": 35,
+		"subPrice": 22,
+		"category": "Porções",
+		"description": "Porção de coxinha da asa frita e crocante.",
+		"image": "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+	},
+	{
+		"id": 40,
+		"name": "Alcatra",
+		"price": 50,
+		"subPrice": 38,
+		"category": "Porções",
+		"description": "Porção de alcatra.",
+		"image": "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+	},
+	{
+		"id": 41,
+		"name": "Alcatra acebolada",
+		"price": 50,
+		"subPrice": 38,
+		"category": "Porções",
+		"description": "Porção de alcatra acebolada.",
+		"image": "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+	},
+	{
+		"id": 42,
+		"name": "Alcatra com queijo",
+		"price": 60,
+		"subPrice": 46,
+		"category": "Porções",
+		"description": "Porção de alcatra com queijo derretido.",
+		"image": "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+	},
+	{
+		"id": 43,
+		"name": "Alcatra e fritas",
+		"price": 65,
+		"subPrice": 48,
+		"category": "Porções",
+		"description": "Porção de alcatra com batata frita.",
+		"image": "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+	},
+	{
+		"id": 44,
+		"name": "Camarão",
+		"price": 90,
+		"category": "Porções",
+		"description": "Porção de camarão frito e crocante.",
+		"image": "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+	}
 ]
-

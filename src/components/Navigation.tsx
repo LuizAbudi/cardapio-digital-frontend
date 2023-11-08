@@ -5,7 +5,7 @@ const Navigation = () => {
   const location = useLocation();
 
   return (
-    <div className="flex justify-between items-center p-4 space-x-4">
+    <div className="flex justify-between items-center p-4 space-x-3">
       <Link
         to="/"
         className={`${

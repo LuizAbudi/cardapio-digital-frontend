@@ -21,6 +21,11 @@ const Home = () => {
       image:
         "https://www.cnnbrasil.com.br/viagemegastronomia/wp-content/uploads/sites/5/2021/10/caipirinha-3483439_1920.jpg",
     },
+    {
+      title: "Doses",
+      image:
+        "https://www.lojamuseudagula.com.br/media/upload/ckeditor/2020/04/08/2020-04-08-post-mdg-virtual-tequila.jpg",
+    },
   ];
 
   return (

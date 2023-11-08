@@ -313,7 +313,7 @@
 		"id": 33,
 		"name": "Polenta Frita",
 		"price": 18,
-		"subPrice": 12,
+		"subPrice": 15,
 		"category": "Porções",
 		"description": "Porção de polenta frita crocante e saborosa.",
 		"image": "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
@@ -356,12 +356,13 @@
 	},
 	{
 		"id": 38,
-		"name": "Costelinha de porco",
-		"price": 48,
-		"subPrice": 32,
-		"category": "Porções",
-		"description": "Porção de costelinha de porco frita e crocante.",
-		"image": "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+		"name": "Energético Monster (473ml)",
+		"price": 12,
+		"size": "473ml",
+		"subCategory": "Energeticos",
+		"category": "Bebidas",
+		"description": "Energetico Monster, para quem precisa de energia extra.",
+		"image": "https://web-assests.monsterenergy.com/mnst/3fe53ca4-fcbd-42bb-a749-4333cb0510d9.png"
 	},
 	{
 		"id": 39,
@@ -392,12 +393,11 @@
 	},
 	{
 		"id": 42,
-		"name": "Alcatra com queijo",
-		"price": 60,
-		"subPrice": 46,
-		"category": "Porções",
-		"description": "Porção de alcatra com queijo derretido.",
-		"image": "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+		"name": "Pinga",
+		"price": 3,
+		"category": "Doses",
+		"description": "Dose de pinga. Da marvada!",
+		"image": "https://i2.wp.com/www.bebidaexpressblog.com.br/wp-content/uploads/2013/04/dose.jpg"
 	},
 	{
 		"id": 43,
@@ -410,11 +410,11 @@
 	},
 	{
 		"id": 44,
-		"name": "Camarão",
-		"price": 90,
-		"category": "Porções",
-		"description": "Porção de camarão frito e crocante.",
-		"image": "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+		"name": "Campari",
+		"price": 10,
+		"category": "Doses",
+		"description": "Dose de campari. Para quem gosta de um sabor amargo.",
+		"image": "https://nalaje-aerolandia.1clickpedidos.app.br/_core/_uploads/2023/05/19192705239c00dgic1k_thumb.png"
 	},
 	{
 		"id": 45,
@@ -467,32 +467,6 @@
 		"category": "Doses",
 		"description": "Dose de rabo de galo. A dose que faltava para sua noite ficar completa!",
 		"image": "https://clubedobarman.com/wp-content/uploads/2023/05/rabodegalo1.jpg"
-	},
-	{
-		"id": 51,
-		"name": "Pinga",
-		"price": 3,
-		"category": "Doses",
-		"description": "Dose de pinga. Da marvada!",
-		"image": "https://i2.wp.com/www.bebidaexpressblog.com.br/wp-content/uploads/2013/04/dose.jpg"
-	},
-	{
-		"id": 52,
-		"name": "Campari",
-		"price": 10,
-		"category": "Doses",
-		"description": "Dose de campari. Para quem gosta de um sabor amargo.",
-		"image": "https://nalaje-aerolandia.1clickpedidos.app.br/_core/_uploads/2023/05/19192705239c00dgic1k_thumb.png"
-	},
-	{
-		"id": 53,
-		"name": "Energético Monster (473ml)",
-		"price": 12,
-		"size": "473ml",
-		"subCategory": "Energeticos",
-		"category": "Bebidas",
-		"description": "Energetico Monster, para quem precisa de energia extra.",
-		"image": "https://web-assests.monsterenergy.com/mnst/3fe53ca4-fcbd-42bb-a749-4333cb0510d9.png"
-	}
+	}	
 ]
 

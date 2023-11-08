@@ -5,12 +5,12 @@ const Navigation = () => {
   const location = useLocation();
 
   return (
-    <div className="flex justify-center items-center p-4 space-x-3">
+    <div className="flex justify-center items-center p-4 space-x-3 max-w-lg w-full md:w-1/2 lg:w-1/3">
       <Link
         to="/"
         className={`${
           location.pathname === "/" ? "text-textColor2" : "text-white"
-        }  font-bold text-xl md:text-2xl `}
+        }  font-bold text-base md:text-xl `}
       >
         Home
       </Link>
@@ -20,7 +20,7 @@ const Navigation = () => {
           location.pathname === "/Por%C3%A7%C3%B5es"
             ? "text-textColor2"
             : "text-white"
-        } font-bold text-xl md:text-2xl`}
+        } font-bold text-base md:text-xl`}
       >
         Porções
       </Link>
@@ -28,7 +28,7 @@ const Navigation = () => {
         to="/Bebidas"
         className={`${
           location.pathname === "/Bebidas" ? "text-textColor2" : "text-white"
-        } font-bold text-xl md:text-2xl`}
+        } font-bold text-base md:text-xl`}
       >
         Bebidas
       </Link>
@@ -36,7 +36,7 @@ const Navigation = () => {
         to="/Drinks"
         className={` ${
           location.pathname === "/Drinks" ? "text-textColor2" : "text-white"
-        } font-bold text-xl md:text-2xl`}
+        } font-bold text-base md:text-xl`}
       >
         Drinks
       </Link>
@@ -44,7 +44,7 @@ const Navigation = () => {
         to="/Doses"
         className={` ${
           location.pathname === "/Doses" ? "text-textColor2" : "text-white"
-        } font-bold text-xl md:text-2xl`}
+        } font-bold text-base md:text-xl`}
       >
         Doses
       </Link>

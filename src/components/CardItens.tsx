@@ -6,6 +6,8 @@ interface CardItemProps {
   price: number;
   subPrice?: number;
   imageUrl: string;
+  size?: string;
+  subCategory?: string;
 }
 
 const CardItem: React.FC<CardItemProps> = ({
@@ -14,6 +16,8 @@ const CardItem: React.FC<CardItemProps> = ({
   price,
   subPrice,
   imageUrl,
+  size,
+  subCategory,
 }) => {
 
   const formattedPrice = (

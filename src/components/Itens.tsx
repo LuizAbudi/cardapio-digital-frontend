@@ -11,6 +11,8 @@ const Itens = ({ type }: { type: string }) => {
     subPrice?: number | undefined;
     image: string;
     category: string;
+    size?: string | undefined;
+    subCategory?: string | undefined;
   }
 
   const [data, setData] = useState<DataItem[]>([]);
@@ -65,19 +67,56 @@ const Itens = ({ type }: { type: string }) => {
 
   const Bebidas = () => {
     if (type === "Bebidas") {
+      const bebidasData = data.filter((item) => item.category === "Bebidas");
+      console.log("Itens de Bebidas recebidos", bebidasData);
+
+      const orderOfSubcategories = [
+        "Cervejas",
+        "Refrigerantes",
+        "Aguas",
+        "Sucos",
+        "Energeticos",
+        "Vinhos",
+      ];
+
+      type ItemsBySubCategory = { [subCategory: string]: DataItem[] };
+      const itemsBySubCategory: ItemsBySubCategory = {};
+
+      bebidasData.forEach((item) => {
+        const subCategory = item.subCategory || "Sem Subcategoria";
+        if (!itemsBySubCategory[subCategory]) {
+          itemsBySubCategory[subCategory] = [];
+        }
+        itemsBySubCategory[subCategory].push(item);
+      });
+
       return (
-        <div className="flex flex-wrap -m-4 justify-center md:-m-2">
-          {data
-            .filter((item) => item.category === "Bebidas")
-            .map((item) => (
-              <CardItem
-                key={item.id}
-                name={item.name}
-                description={item.description}
-                price={item.price}
-                imageUrl={item.image}
-              />
-            ))}
+        <div>
+          {orderOfSubcategories.map((subCategory) => {
+            if (itemsBySubCategory[subCategory]) {
+              return (
+                <div key={subCategory}>
+                  <h2 className="text-center text-2xl md:text-2xl text-white py-8">
+                    {subCategory}
+                  </h2>
+                  <div className="flex flex-wrap -m-4 justify-center md:-m-2">
+                    {itemsBySubCategory[subCategory].map((item) => (
+                      <CardItem
+                        key={item.id}
+                        name={item.name}
+                        description={item.description}
+                        price={item.price}
+                        size={item.size}
+                        subCategory={item.subCategory}
+                        imageUrl={item.image}
+                      />
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+            return null;
+          })}
         </div>
       );
     }
@@ -105,6 +144,27 @@ const Itens = ({ type }: { type: string }) => {
     return null;
   };
 
+  const Doses = () => {
+    if (type === "Doses") {
+      return (
+        <div className="flex flex-wrap -m-4 justify-center md:-m-2">
+          {data
+            .filter((item) => item.category === "Doses")
+            .map((item) => (
+              <CardItem
+                key={item.id}
+                name={item.name}
+                description={item.description}
+                price={item.price}
+                imageUrl={item.image}
+              />
+            ))}
+        </div>
+      );
+    }
+    return null;
+  };
+
   const returnComponent = () => {
     if (type === "Porções") {
       return <Porcoes />;
@@ -114,6 +174,9 @@ const Itens = ({ type }: { type: string }) => {
     }
     if (type === "Drinks") {
       return <Drinks />;
+    }
+    if (type === "Doses") {
+      return <Doses />;
     }
     return null;
   };

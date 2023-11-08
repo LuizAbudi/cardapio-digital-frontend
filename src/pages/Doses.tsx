@@ -3,8 +3,8 @@ import * as logos from "../assets/images/index";
 import Itens from "../components/Itens";
 import Navigation from "../components/Navigation";
 
-const Bebidas = () => {
-  const type = "Bebidas";
+const Doses = () => {
+  const type = "Doses";
 
   return (
     <div className="bg-wineColor min-h-screen overflow-x-hidden">
@@ -16,16 +16,16 @@ const Bebidas = () => {
             className="w-[150px] h-[150px] md:w-[200px] md:h-[200px]"
           />
           <div className="text-2xl md:text-4xl text-white font-bold">
-            Cardápio de Bebidas
+            Cardápio de Doses
           </div>
         </div>
         <Navigation />
       </div>
       <div className="justify-center items-center p-2">
-        <Itens type={type} /> 
+        <Itens type={type} />
       </div>
     </div>
   );
 };
 
-export default Bebidas;
+export default Doses;

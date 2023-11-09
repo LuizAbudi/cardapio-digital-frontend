@@ -2,7 +2,7 @@ import axios from 'axios'
 import { TItemsResponseType } from '../types/items'
 
 const api = axios.create({
-	baseURL: 'http://localhost:3001',
+	baseURL: 'https://cardapio-digital-ktiu.onrender.com',
 })
 
 export const getItems = async () => {

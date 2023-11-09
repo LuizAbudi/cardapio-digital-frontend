@@ -5,12 +5,14 @@ import Porcoes from "./pages/Porcoes";
 import Bebidas from "./pages/Bebidas";
 import Drinks from "./pages/Drinks";
 import Doses from "./pages/Doses";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/Admin" element={<Admin />} />
         <Route path="/Porções" element={<Porcoes />} />
         <Route path="/Bebidas" element={<Bebidas />} />
         <Route path="/Drinks" element={<Drinks />} />

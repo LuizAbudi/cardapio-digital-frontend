@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import CardItem from './CardItens'
-import jsonData from '../data/data.json'
+//import jsonData from '../data/data.json'
 import { TItemsResponseType } from '../types/items'
 import { getItems } from '../services/api'
 

@@ -3,6 +3,9 @@ import * as logos from "../assets/images/index";
 import Navigation from "../components/Navigation";
 
 import axios from "axios";
+import { ListItens } from "../components/ListItens";
+import AddItens from "../components/AddItens";
+import { UpdateItem } from "../components/UpdateItem";
 
 interface Item {
   id: number;
@@ -20,9 +23,8 @@ const Admin = () => {
   const [items, setItems] = useState<Item[]>([]);
 
   useEffect(() => {
-    // Realize a solicitação GET para buscar os itens do banco de dados
     axios
-      .get("https://cardapio-digital-ktiu.onrender.com/itens/") // Substitua '/api/items' pela rota correta da sua API
+      .get("https://cardapio-digital-ktiu.onrender.com/itens/")
       .then((response) => {
         setItems(response.data);
       })
@@ -30,6 +32,24 @@ const Admin = () => {
         console.error("Erro ao buscar os itens:", error);
       });
   }, []);
+
+  const [listContent, setListContent] = useState(false);
+  const [addContent, setAddContent] = useState(false);
+  const [updateContent, setUpdateContent] = useState(false);
+
+  const handleClickList = () => {
+    setListContent(!listContent);
+    setAddContent(false);
+  };
+  const handleClickAdd = () => {
+    setAddContent(!addContent);
+    setListContent(false);
+  };
+  const handleClickUpdate = () => {
+    setUpdateContent(!updateContent);
+    setAddContent(false);
+    setListContent(false);
+  };
 
   return (
     <div className="bg-wineColor min-h-screen overflow-x-hidden">
@@ -46,43 +66,23 @@ const Admin = () => {
         </div>
         <Navigation />
       </div>
-      <div className="justify-center items-center p-2">
-        <div className="overflow-x-auto">
-          <table className="min-w-full">
-            <thead>
-              <tr>
-                <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-700 uppercase tracking-wider">
-                  Nome
-                </th>
-                <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-700 uppercase tracking-wider">
-                  Categoria
-                </th>
-                <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-700 uppercase tracking-wider">
-                  Sub-Categoria
-                </th>
-                <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-700 uppercase tracking-wider">
-                  Preço
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {items.map((item) => (
-                <tr key={item.id}>
-                  <td className="px-6 py-4 text-white border">{item.name}</td>
-                  <td className="px-6 py-4 text-white border">
-                    {item.category}
-                  </td>
-                  <td className="px-6 py-4 text-white border">
-                    {item.subCategory}
-                  </td>
-                  <td className="px-6 py-4 text-white border">{`R$${item.price.toFixed(
-                    2
-                  )}`}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      <div className="justify-center items-center">
+        <div>
+          <div className="text-2xl text-white font-bold ml-4">
+            <button className="bg-white text-wineColor rounded-lg p-2 mb-2 md:mb-0 md:mr-2" onClick={handleClickList}>
+              Listar Itens
+            </button>
+            <button className="bg-white text-wineColor rounded-lg p-2 mb-2 md:mb-0 md:mr-2" onClick={handleClickAdd}>
+              Adicionar Item
+            </button>
+            <button className="bg-white text-wineColor rounded-lg p-2" onClick={handleClickUpdate}>
+              Atualizar/Editar Item
+            </button>
+          </div>
         </div>
+        {listContent && <ListItens items={items} />}
+        {addContent && <AddItens />}
+        {updateContent && <UpdateItem items={items} />}
       </div>
     </div>
   );

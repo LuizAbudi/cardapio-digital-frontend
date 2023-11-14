@@ -23,32 +23,6 @@ const Itens = ({ type }: { type: string }) => {
 		getData()
 	}, [getData])
 
-	// useEffect(() => {
-	//   // Função para limpar o localStorage ao fechar a página
-	//   const cleanupLocalStorage = () => {
-	//     localStorage.removeItem("menuData");
-	//   };
-
-	//   // Adiciona o evento de antes de descarregar a página para limpar o localStorage
-	//   window.addEventListener("beforeunload", cleanupLocalStorage);
-
-	//   // Verifica se há dados no localStorage ao carregar a página
-	//   const localData = localStorage.getItem("menuData");
-	//   if (localData) {
-	//     setData(JSON.parse(localData));
-	//   } else {
-	//     // Se não houver dados no localStorage, insira os dados do jsonData
-	//     const jsonDataString = JSON.stringify(jsonData);
-	//     localStorage.setItem("menuData", jsonDataString);
-	//     setData(jsonData);
-	//   }
-
-	//   // Remove o evento antes de descarregar a página quando o componente é desmontado
-	//   return () => {
-	//     window.removeEventListener("beforeunload", cleanupLocalStorage);
-	//   };
-	// }, []);
-
 	const Porcoes = () => {
 		if (type === 'Porções') {
 			return (

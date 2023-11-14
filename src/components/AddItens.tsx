@@ -25,6 +25,10 @@ const AddItens = () => {
     subCategory: '',
   });
 
+  const [isSizeDisabled, setIsSizeDisabled] = useState(false);
+  const [isSubCategoryDisabled, setIsSubCategoryDisabled] = useState(false);
+
+
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -42,12 +46,19 @@ const AddItens = () => {
         ...prevItem,
         [name]: value,
       }));
+
+      // Atualizar estados para desabilitar os campos quando a categoria não for "Bebidas"
+      if (name === 'category') {
+        setIsSizeDisabled(value !== 'Bebidas');
+        setIsSubCategoryDisabled(value !== 'Bebidas');
+      }
     }
   };
 
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     console.log('Item enviado:', item);
   };
 
@@ -63,7 +74,7 @@ const AddItens = () => {
               Nome:
             </label>
             <input
-            required
+              required
               type='text'
               id='name'
               name='name'
@@ -78,7 +89,7 @@ const AddItens = () => {
               Descrição:
             </label>
             <input
-            required
+              required
               type='text'
               id='description'
               name='description'
@@ -92,7 +103,7 @@ const AddItens = () => {
               Preço:
             </label>
             <input
-            required
+              required
               type='number'
               id='price'
               name='price'
@@ -103,15 +114,15 @@ const AddItens = () => {
           </div>
           <div className='mb-4'>
             <label htmlFor='category' className='block text-gray-600 text-sm font-medium mb-2'>
-                Categoria:
+              Categoria:
             </label>
             <select
-                required
-                id='category'
-                name='category'
-                value={item.category}
-                onChange={handleChange}
-                className='w-full border-gray-300 rounded-md shadow-sm p-2 bg-gray-200'
+              required
+              id='category'
+              name='category'
+              value={item.category}
+              onChange={handleChange}
+              className='w-full border-gray-300 rounded-md shadow-sm p-2 bg-gray-200'
             >
               <option value=''>Selecione a Categoria</option>
               <option value='Porções'>Porções</option>
@@ -159,8 +170,9 @@ const AddItens = () => {
               name='size'
               value={item.size}
               onChange={handleChange}
-              className='w-full border-gray-300 rounded-md shadow-sm p-2 bg-gray-200'
+              className={`w-full border-gray-300 rounded-md shadow-sm p-2 ${isSizeDisabled ? 'bg-gray-500 text-gray-400' : 'bg-gray-200 text-gray-800'}`}
             />
+
           </div>
           <div className='mb-4'>
             <label htmlFor='subCategory' className='block text-gray-600 text-sm font-medium mb-2'>
@@ -172,7 +184,7 @@ const AddItens = () => {
               name='subCategory'
               value={item.subCategory}
               onChange={handleChange}
-              className='w-full border-gray-300 rounded-md shadow-sm p-2 bg-gray-200'
+              className={`w-full border-gray-300 rounded-md shadow-sm p-2 ${isSubCategoryDisabled ? 'bg-gray-500 text-gray-400' : 'bg-gray-200 text-gray-800'}`}
             />
           </div>
 

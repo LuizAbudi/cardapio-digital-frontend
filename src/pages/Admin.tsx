@@ -24,7 +24,7 @@ const Admin = () => {
 
   useEffect(() => {
     axios
-      .get("https://cardapio-digital-ktiu.onrender.com/itens/")
+      .get("http://localhost:3001/itens/")
       .then((response) => {
         setItems(response.data);
       })

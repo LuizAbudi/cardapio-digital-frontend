@@ -16,9 +16,9 @@ function App() {
   };
 
   const verifyAuthentication = (): JSX.Element | null => {
-    if (localStorage.getItem('atila') === 'logado' || localStorage.getItem('rafa') === 'logado') {
+    if(localStorage.getItem('token')) {
       return <Admin />;
-    } else {
+    }else{
       return <Login authenticate={authenticate} />;
     }
   };

@@ -16,6 +16,9 @@ function CardComponent({
     setTimeout(() => {
       setAnimateText(false);
       if (title === "Porções") title = "porcoes";
+      else if (title === "Bebidas") title = "bebidas";
+      else if (title === "Drinks") title = "drinks";
+      else if (title === "Doses") title = "doses";
       navigate(`/${title}`);
     }, 1000);
   };

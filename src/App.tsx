@@ -27,11 +27,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Admin" element={verifyAuthentication()} />
-        <Route path="/Porcoes" element={<Porcoes />} />
-        <Route path="/Bebidas" element={<Bebidas />} />
-        <Route path="/Drinks" element={<Drinks />} />
-        <Route path="/Doses" element={<Doses />} />
+        <Route path="/admin" element={verifyAuthentication()} />
+        <Route path="/porcoes" element={<Porcoes/>} />
+        <Route path="/bebidas" element={<Bebidas />} />
+        <Route path="/drinks" element={<Drinks />} />
+        <Route path="/doses" element={<Doses />} />
       </Routes>
     </BrowserRouter>
   );

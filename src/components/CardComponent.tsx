@@ -15,6 +15,7 @@ function CardComponent({
     setAnimateText(true);
     setTimeout(() => {
       setAnimateText(false);
+      if (title === "Porções") title = "porcoes";
       navigate(`/${title}`);
     }, 1000);
   };

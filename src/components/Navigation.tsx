@@ -15,9 +15,9 @@ const Navigation = () => {
         Home
       </Link>
       <Link
-        to="/Porções"
+        to="/porcoes"
         className={`${
-          location.pathname === "/Por%C3%A7%C3%B5es"
+          location.pathname === "/porcoes"
             ? "text-textColor2"
             : "text-white"
         } font-bold text-base md:text-xl`}
@@ -27,7 +27,7 @@ const Navigation = () => {
       <Link
         to="/Bebidas"
         className={`${
-          location.pathname === "/Bebidas" ? "text-textColor2" : "text-white"
+          location.pathname === "/bebidas" ? "text-textColor2" : "text-white"
         } font-bold text-base md:text-xl`}
       >
         Bebidas
@@ -35,7 +35,7 @@ const Navigation = () => {
       <Link
         to="/Drinks"
         className={` ${
-          location.pathname === "/Drinks" ? "text-textColor2" : "text-white"
+          location.pathname === "/drinks" ? "text-textColor2" : "text-white"
         } font-bold text-base md:text-xl`}
       >
         Drinks
@@ -43,7 +43,7 @@ const Navigation = () => {
       <Link
         to="/Doses"
         className={` ${
-          location.pathname === "/Doses" ? "text-textColor2" : "text-white"
+          location.pathname === "/doses" ? "text-textColor2" : "text-white"
         } font-bold text-base md:text-xl`}
       >
         Doses

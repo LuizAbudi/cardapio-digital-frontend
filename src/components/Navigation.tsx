@@ -25,7 +25,7 @@ const Navigation = () => {
         Porções
       </Link>
       <Link
-        to="/Bebidas"
+        to="/bebidas"
         className={`${
           location.pathname === "/bebidas" ? "text-textColor2" : "text-white"
         } font-bold text-base md:text-xl`}
@@ -33,7 +33,7 @@ const Navigation = () => {
         Bebidas
       </Link>
       <Link
-        to="/Drinks"
+        to="/drinks"
         className={` ${
           location.pathname === "/drinks" ? "text-textColor2" : "text-white"
         } font-bold text-base md:text-xl`}
@@ -41,7 +41,7 @@ const Navigation = () => {
         Drinks
       </Link>
       <Link
-        to="/Doses"
+        to="/doses"
         className={` ${
           location.pathname === "/doses" ? "text-textColor2" : "text-white"
         } font-bold text-base md:text-xl`}

@@ -9,7 +9,7 @@ interface ListItensProps {
     price: number;
     category: string;
     subPrice?: number;
-    imageUrl: string;
+    image: string;
     size?: string;
     subCategory?: string;
   }[];
@@ -21,8 +21,8 @@ interface EditedItem {
   description: string;
   price: number;
   category: string;
+  image: string;
   subPrice?: number;
-  imageUrl: string;
   size?: string;
   subCategory?: string;
 }
@@ -38,7 +38,7 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
     price: 0,
     category: '',
     subPrice: 0,
-    imageUrl: '',
+    image: '',
     size: '',
     subCategory: '',
   });
@@ -67,7 +67,7 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
       price: 0,
       category: '',
       subPrice: 0,
-      imageUrl: '',
+      image: '',
       size: '',
       subCategory: '',
     });
@@ -100,14 +100,14 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
         category: editedItem.category,
         price: editedItem.price,
         description: editedItem.description,
-        image: editedItem.imageUrl,
+        image: editedItem.image,
         subPrice: editedItem.subPrice,
         subCategory: editedItem.subCategory,
         size: editedItem.size,
       };
 
       const response = await axios.post(
-        'https://cardapio-digital-ktiu.onrender.com/itens/update',
+        'http://localhost:3001/itens/update',
         updatedItem
       );
 
@@ -128,10 +128,25 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
       price: 0,
       category: '',
       subPrice: 0,
-      imageUrl: '',
+      image: '',
       size: '',
       subCategory: '',
     });
+  };
+
+  const handleDelete = async (itemId: number) => {
+    const id = itemId.toString();
+
+    try {
+      const response = await axios.delete('http://localhost:3001/itens', {
+        data: { id: id },
+      });
+
+      console.log('Item deletado: ', response);
+
+    } catch (error) {
+      console.log('Erro:', error);
+    }
   };
 
   return (
@@ -146,14 +161,18 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
                   <label htmlFor={key} className="block text-gray-600 text-sm font-medium mb-2">
                     {key.charAt(0).toUpperCase() + key.slice(1)}:
                   </label>
-                  <input
-                    type="text"
-                    id={key}
-                    name={key}
-                    value={editedItem[key as EditedItemKey]}
-                    onChange={handleInputChange}
-                    className="w-full border-gray-300 rounded-md shadow-sm p-2 bg-gray-100 text-gray-800"
-                  />
+                  {key.toLowerCase() === 'id' ? (
+                    <div className='w-full border-gray-300 rounded-md shadow-sm p-2 bg-gray-400 text-gray-800'>{editedItem[key as EditedItemKey]}</div>
+                  ) : (
+                    <input
+                      type="text"
+                      id={key}
+                      name={key}
+                      value={editedItem[key as EditedItemKey]}
+                      onChange={handleInputChange}
+                      className="w-full border-gray-300 rounded-md shadow-sm p-2 bg-gray-100 text-gray-800"
+                    />
+                  )}
                 </div>
               ))}
 
@@ -169,6 +188,13 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
                   onClick={handleCancelEdit}
                 >
                   Cancelar
+                </button>
+                <div className="flex-grow"></div>
+                <button
+                  className="bg-red-500 text-white rounded-lg p-2"
+                  onClick={() => handleDelete(editingItemId)}
+                >
+                  Excluir Item
                 </button>
               </div>
             </form>

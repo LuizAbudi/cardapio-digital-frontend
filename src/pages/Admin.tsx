@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import * as logos from "../assets/images/index";
 import Navigation from "../components/Navigation";
 
@@ -14,7 +14,7 @@ interface Item {
   price: number;
   category: string;
   subPrice?: number;
-  imageUrl: string;
+  image: string;
   size?: string;
   subCategory?: string;
 }
@@ -22,7 +22,7 @@ interface Item {
 const Admin = () => {
   const [items, setItems] = useState<Item[]>([]);
 
-  useEffect(() => {
+  const getItems = () => {
     axios
       .get("http://localhost:3001/itens/")
       .then((response) => {
@@ -31,21 +31,32 @@ const Admin = () => {
       .catch((error) => {
         console.error("Erro ao buscar os itens:", error);
       });
-  }, []);
+  }
 
   const [listContent, setListContent] = useState(false);
   const [addContent, setAddContent] = useState(false);
   const [updateContent, setUpdateContent] = useState(false);
 
   const handleClickList = () => {
+    if (listContent === false) {
+      getItems();
+    }
     setListContent(!listContent);
     setAddContent(false);
+    setUpdateContent(false);
   };
   const handleClickAdd = () => {
+    if (addContent === false) {
+      getItems();
+    }
     setAddContent(!addContent);
     setListContent(false);
+    setUpdateContent(false);
   };
   const handleClickUpdate = () => {
+    if (updateContent === false) {
+      getItems();
+    }
     setUpdateContent(!updateContent);
     setAddContent(false);
     setListContent(false);

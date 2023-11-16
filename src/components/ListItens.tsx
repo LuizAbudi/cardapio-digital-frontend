@@ -8,7 +8,7 @@ interface ListItensProps {
         price: number;
         category: string;
         subPrice?: number;
-        imageUrl: string;
+        image: string;
         size?: string;
         subCategory?: string;
     }[]

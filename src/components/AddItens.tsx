@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState, ChangeEvent } from 'react';
 
 interface Item {
@@ -7,7 +8,7 @@ interface Item {
   price: number | '';
   category: string;
   subPrice: number | '';
-  imageUrl: string;
+  image: string;
   size: string;
   subCategory: string;
 }
@@ -20,7 +21,7 @@ const AddItens = () => {
     price: 0,
     category: '',
     subPrice: 0,
-    imageUrl: '',
+    image: '',
     size: '',
     subCategory: '',
   });
@@ -56,8 +57,17 @@ const AddItens = () => {
   };
 
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    try {
+
+      const response = await axios.post('http://localhost:3001/itens', item);
+      console.log('resposta do servidor:', response);
+
+    } catch (error) {
+      console.log('erro:', error);
+    }
 
     console.log('Item enviado:', item);
   };
@@ -132,15 +142,15 @@ const AddItens = () => {
             </select>
           </div>
           <div className='mb-4'>
-            <label htmlFor='imageUrl' className='block text-gray-600 text-sm font-medium mb-2'>
+            <label htmlFor='image' className='block text-gray-600 text-sm font-medium mb-2'>
               Url da Imagem:
             </label>
             <input
               required
               type='text'
-              id='imageUrl'
-              name='imageUrl'
-              value={item.imageUrl}
+              id='image'
+              name='image'
+              value={item.image}
               onChange={handleChange}
               className='w-full border-gray-300 rounded-md shadow-sm p-2 bg-gray-200'
             />

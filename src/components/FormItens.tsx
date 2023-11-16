@@ -1,101 +1,37 @@
-import axios from 'axios';
-import React, { useState, ChangeEvent } from 'react';
+import React from 'react'
 
-interface Item {
-  id: number;
-  name: string;
-  description: string;
-  price: number | '';
-  category: string;
-  subPrice: number | '';
-  image: string;
-  size: string;
-  subCategory: string;
-  isPromotion?: boolean;
+interface FormItensProps {
+  item: {
+    name: string;
+    description: string;
+    price: number;
+    category: string;
+    subPrice?: number;
+    image: string;
+    size?: string;
+    subCategory?: string;
+    isPromotion?: boolean;
+  };
+  handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void;
+  handleCheckboxChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  isSizeDisabled: boolean;
+  isSubCategoryDisabled: boolean;
+  isPromotionDisabled: boolean;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
-const AddItens = () => {
-  const [item, setItem] = useState<Item>({
-    id: 0,
-    name: '',
-    description: '',
-    price: 0,
-    category: '',
-    subPrice: 0,
-    image: '',
-    size: '',
-    subCategory: '',
-    isPromotion: false,
-  });
 
-  const [isSizeDisabled, setIsSizeDisabled] = useState(false);
-  const [isSubCategoryDisabled, setIsSubCategoryDisabled] = useState(false);
-  const [isPromotionDisabled, setIsPromotionDisabled] = useState(false);
-
-
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-
-    if (name === 'price' || name === 'subPrice') {
-      const updatedValue = value === '' ? '' : Math.max(0, parseFloat(value));
-
-      setItem((prevItem) => ({
-        ...prevItem,
-        [name]: updatedValue,
-      }));
-    } else {
-      setItem((prevItem) => ({
-        ...prevItem,
-        [name]: value,
-      }));
-
-      // Atualizar estados para desabilitar os campos quando a categoria não for "Bebidas"
-      if (name === 'category') {
-        setIsSizeDisabled(value !== 'Bebidas');
-        setIsSubCategoryDisabled(value !== 'Bebidas');
-      }
-
-    }
-  };
-
-  const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, checked } = e.target;
-
-    setItem((prevItem) => ({
-      ...prevItem,
-      [name]: checked,
-    }));
-
-    // Atualizar estado para desabilitar o campo quando o checkbox não estiver marcado
-    if (name === 'isPromotion') {
-      setIsPromotionDisabled(!checked);
-    }
-  }
-
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    try {
-
-      const response = await axios.post('http://localhost:3001/itens', item);
-      console.log('resposta do servidor:', response);
-
-    } catch (error) {
-      console.log('erro:', error);
-    }
-
-    console.log('Item enviado:', item);
-  };
-
+const FormItens: React.FC<FormItensProps> = ({
+  item,
+  handleChange,
+  handleCheckboxChange,
+  isSizeDisabled,
+  isSubCategoryDisabled,
+  isPromotionDisabled,
+  handleSubmit,
+}) => {
   return (
-    <div className='bg-wineColor flex justify-center p-10'>
-      <div className='min-w-full max-w-md mx-auto p-4 bg-white rounded-lg shadow-md'>
-        <h2 className='text-2xl font-semibold text-gray-800 mb-4 justify-center items-center flex'>
-          Adicionar Item
-        </h2>
+    <div>
         <form onSubmit={handleSubmit}>
           <div className='mb-4'>
             <label htmlFor='name' className='block text-gray-600 text-sm font-medium mb-2'>
@@ -233,17 +169,9 @@ const AddItens = () => {
                           w-5 h-5`} 
             />
           </div>
-
-          <button
-            type='submit'
-            className='w-full bg-wineColor text-white py-2 rounded-md'
-          >
-            Adicionar Item
-          </button>
         </form>
-      </div>
     </div>
-  );
-};
+  )
+}
 
-export default AddItens;
+export default FormItens

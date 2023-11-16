@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import FormItens from './FormItens';
 
 interface ListItensProps {
   items: {
@@ -12,6 +13,7 @@ interface ListItensProps {
     image: string;
     size?: string;
     subCategory?: string;
+    isPromotion?: boolean;
   }[];
 }
 
@@ -25,6 +27,7 @@ interface EditedItem {
   subPrice?: number;
   size?: string;
   subCategory?: string;
+  isPromotion?: boolean;
 }
 
 type EditedItemKey = keyof EditedItem;
@@ -41,6 +44,7 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
     image: '',
     size: '',
     subCategory: '',
+    isPromotion: false,
   });
 
   const handleEditClick = (itemId: number) => {
@@ -70,6 +74,7 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
       image: '',
       size: '',
       subCategory: '',
+      isPromotion: false,
     });
   };
 
@@ -78,18 +83,23 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
   ) => {
     const { name, value } = e.target;
 
-    // Adicione validação para campos numéricos
     if (name === 'price' || name === 'subPrice') {
       if (!/^\d+$/.test(value)) {
-        // Se o valor não for um número, não atualize o estado
         return;
       }
+    }
+    if (name === 'isPromotion') {
+      setEditedItem((prevItem) => ({
+        ...prevItem,
+        [name as EditedItemKey]: !prevItem.isPromotion,
+      }));
     }
 
     setEditedItem((prevItem) => ({
       ...prevItem,
       [name as EditedItemKey]: value !== null ? value : '',
     }));
+
   };
 
   const handleSaveEdit = async (itemId: number) => {
@@ -104,6 +114,7 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
         subPrice: editedItem.subPrice,
         subCategory: editedItem.subCategory,
         size: editedItem.size,
+        isPromotion: editedItem.isPromotion,
       };
 
       const response = await axios.post(
@@ -131,6 +142,7 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
       image: '',
       size: '',
       subCategory: '',
+      isPromotion: false,
     });
   };
 
@@ -148,6 +160,15 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
       console.log('Erro:', error);
     }
   };
+  
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); 
+
+    if (editingItemId !== null) {
+      await handleSaveEdit(editingItemId);
+    }
+  };
 
   return (
     <div className="overflow-x-auto p-4">
@@ -156,25 +177,15 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
           <div>
             <h2 className="text-2xl text-gray-800 font-bold mb-4">Editar Item</h2>
             <form>
-              {Object.keys(editedItem).map((key) => (
-                <div className="mb-4" key={key}>
-                  <label htmlFor={key} className="block text-gray-600 text-sm font-medium mb-2">
-                    {key.charAt(0).toUpperCase() + key.slice(1)}:
-                  </label>
-                  {key.toLowerCase() === 'id' ? (
-                    <div className='w-full border-gray-300 rounded-md shadow-sm p-2 bg-gray-400 text-gray-800'>{editedItem[key as EditedItemKey]}</div>
-                  ) : (
-                    <input
-                      type="text"
-                      id={key}
-                      name={key}
-                      value={editedItem[key as EditedItemKey]}
-                      onChange={handleInputChange}
-                      className="w-full border-gray-300 rounded-md shadow-sm p-2 bg-gray-100 text-gray-800"
-                    />
-                  )}
-                </div>
-              ))}
+              <FormItens 
+                item={editedItem}
+                handleChange={handleInputChange}
+                handleCheckboxChange={handleInputChange}
+                isSizeDisabled={false}
+                isSubCategoryDisabled={false}
+                isPromotionDisabled={false}
+                handleSubmit={handleFormSubmit}
+              />
 
               <div className="flex">
                 <button

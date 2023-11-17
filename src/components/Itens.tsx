@@ -3,6 +3,7 @@ import CardItem from './CardItens'
 //import jsonData from '../data/data.json'
 import { TItemsResponseType } from '../types/items'
 import { getItems } from '../services/api'
+import ItensPromotion from './ItensPromotion'
 
 const Itens = ({ type }: { type: string }) => {
 	const [data, setData] = useState<TItemsResponseType>([])
@@ -10,9 +11,6 @@ const Itens = ({ type }: { type: string }) => {
 	const getData = useCallback(async () => {
 		try {
 			const res = await getItems()
-
-			console.log({ res })
-
 			setData(res)
 		} catch (error) {
 			console.log({ error })
@@ -48,7 +46,6 @@ const Itens = ({ type }: { type: string }) => {
 	const Bebidas = () => {
 		if (type === 'Bebidas') {
 			const bebidasData = data.filter((item) => item.category === 'Bebidas')
-			console.log('Itens de Bebidas recebidos', bebidasData)
 
 			const orderOfSubcategories = [
 				'Cervejas',
@@ -145,6 +142,15 @@ const Itens = ({ type }: { type: string }) => {
 		return null
 	}
 
+	const Promotions = () => {
+		if (type === 'Promotions') {
+			return (
+				<ItensPromotion type={type} />
+			)
+		}
+		return null
+	}
+
 	const returnComponent = () => {
 		if (type === 'Porções') {
 			return <Porcoes />
@@ -157,6 +163,9 @@ const Itens = ({ type }: { type: string }) => {
 		}
 		if (type === 'Doses') {
 			return <Doses />
+		}
+		if (type === 'Promotions') {
+			return <Promotions />
 		}
 		return null
 	}

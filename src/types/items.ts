@@ -8,6 +8,8 @@ export type TItemResponseType = {
 	category: string
 	size?: string
 	subCategory?: string
+	isPromotion: boolean
+	pricePromotion?: number
 }
 
 export type TItemsResponseType = TItemResponseType[]

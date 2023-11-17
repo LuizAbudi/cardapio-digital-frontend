@@ -3,11 +3,12 @@ import React from "react";
 interface CardItemProps {
   name: string;
   description: string;
-  price: number;
+  price?: number;
   subPrice?: number;
   imageUrl: string;
   size?: string;
   subCategory?: string;
+  pricePromotion?: number;
 }
 
 const CardItem: React.FC<CardItemProps> = ({
@@ -18,18 +19,19 @@ const CardItem: React.FC<CardItemProps> = ({
   imageUrl,
   size,
   subCategory,
+  pricePromotion,
 }) => {
 
   const formattedPrice = (
     <div>
-      <p>Inteira: R$ {price.toFixed(2).replace(".", ",")}</p>
+      <p>Inteira: R$ {price?.toFixed(2).replace(".", ",")}</p>
       {subPrice && <p>Meia: R$ {subPrice.toFixed(2).replace(".", ",")}</p>}
     </div>
   );
 
   const formattedPrice2 = (
     <div>
-      <p>R$ {price.toFixed(2).replace(".", ",")}</p>  
+      <p>R$ {price?.toFixed(2).replace(".", ",")}</p>  
     </div>
   );
 
@@ -40,6 +42,23 @@ const CardItem: React.FC<CardItemProps> = ({
     return formattedPrice2;
   }
 
+  const formattedPricePromotion = () => {
+    console.log("itens promocao:", pricePromotion);
+    if (pricePromotion) {
+      return (
+        <div>
+          <p className="text-decoration-line: line-through">
+            {`R$${price?.toFixed(2).replace(".", ",")}`}
+          </p>
+          <p>
+            {`R$${pricePromotion.toFixed(2).replace(".", ",")}`}
+          </p>
+        </div>
+      );
+    }
+    return null;
+  }
+
   return (
     <div className="p-4 shadow-lg rounded-lg max-w-lg m-4 flex bg-white w-full md:w-1/2 lg:w-1/3">
       <div className="w-1/2 p-4">
@@ -48,6 +67,9 @@ const CardItem: React.FC<CardItemProps> = ({
         <p className="text-lg font-bold text-textColor2">          
           {whitchPrice()}
         </p>
+        <p className="text-lg font-bold text-textColor2">          
+          {formattedPricePromotion()}
+        </p>
       </div>
       <div className="w-1/2 relative bg-white">
         <div
@@ -55,6 +77,7 @@ const CardItem: React.FC<CardItemProps> = ({
           style={{ backgroundImage: `url(${imageUrl})` }}
         ></div>
       </div>
+      
     </div>
   );
 };

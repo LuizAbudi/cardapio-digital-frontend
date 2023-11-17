@@ -88,12 +88,6 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
         return;
       }
     }
-    if (name === 'isPromotion') {
-      setEditedItem((prevItem) => ({
-        ...prevItem,
-        [name as EditedItemKey]: !prevItem.isPromotion,
-      }));
-    }
 
     setEditedItem((prevItem) => ({
       ...prevItem,
@@ -101,6 +95,15 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
     }));
 
   };
+
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = e.target;
+
+    setEditedItem((prevItem) => ({
+      ...prevItem,
+      [name as EditedItemKey]: checked,
+    }));
+  }
 
   const handleSaveEdit = async (itemId: number) => {
     try {
@@ -180,7 +183,7 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
               <FormItens 
                 item={editedItem}
                 handleChange={handleInputChange}
-                handleCheckboxChange={handleInputChange}
+                handleCheckboxChange={handleCheckboxChange}
                 isSizeDisabled={false}
                 isSubCategoryDisabled={false}
                 isPromotionDisabled={false}

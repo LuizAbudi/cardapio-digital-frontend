@@ -7,6 +7,7 @@ import Drinks from './pages/Drinks';
 import Doses from './pages/Doses';
 import Admin from './pages/Admin';
 import Login from './services/Login';
+import Promotions from './pages/Promotions';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -32,6 +33,7 @@ function App() {
         <Route path="/bebidas" element={<Bebidas />} />
         <Route path="/drinks" element={<Drinks />} />
         <Route path="/doses" element={<Doses />} />
+        <Route path="/promocoes" element={<Promotions />} />
       </Routes>
     </BrowserRouter>
   );

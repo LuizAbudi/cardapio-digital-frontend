@@ -71,8 +71,8 @@ const Admin = () => {
             alt="Logo"
             className="w-[150px] h-[150px] md:w-[200px] md:h-[200px]"
           />
-          <div className="text-2xl md:text-4xl text-white font-bold">
-            TELA DE ADMINISTRAÇÃO
+          <div className="text-2xl md:text-4xl text-white font-bold ">
+            Administração
           </div>
         </div>
         <Navigation />

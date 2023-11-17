@@ -11,6 +11,7 @@ interface FormItensProps {
     size?: string;
     subCategory?: string;
     isPromotion?: boolean;
+    pricePromotion?: number;
   };
   handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void;
   handleCheckboxChange: (e: React.ChangeEvent<HTMLInputElement>) => void;

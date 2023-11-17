@@ -18,9 +18,7 @@ const ItensPromotion = ({ type }: { type: string }) => {
 
 	useEffect(() => {
 		getData()
-	}, [getData])
-    
-
+	}, [getData]) 
 
 	const Promotions = () => {
 		if (type === 'Promotions') {

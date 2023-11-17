@@ -35,15 +35,14 @@ const CardItem: React.FC<CardItemProps> = ({
     </div>
   );
 
-  const whitchPrice = () => {
-    if (subPrice) {
-      return formattedPrice;
-    }
-    return formattedPrice2;
+  const whitchPrice = () => {    
+      if (subPrice) {
+        return formattedPrice;
+      }
+      return formattedPrice2;   
   }
 
   const formattedPricePromotion = () => {
-    console.log("itens promocao:", pricePromotion);
     if (pricePromotion) {
       return (
         <div>
@@ -56,7 +55,7 @@ const CardItem: React.FC<CardItemProps> = ({
         </div>
       );
     }
-    return null;
+    return whitchPrice();
   }
 
   return (
@@ -64,11 +63,8 @@ const CardItem: React.FC<CardItemProps> = ({
       <div className="w-1/2 p-4">
         <h2 className="text-xl font-semibold mb-2">{name}</h2>
         <p className="text-gray-600 mb-2">{description}</p>
-        <p className="text-lg font-bold text-textColor2">          
-          {whitchPrice()}
-        </p>
-        <p className="text-lg font-bold text-textColor2">          
-          {formattedPricePromotion()}
+        <p className="text-lg font-bold text-textColor2">       
+          {whitchPrice() ? formattedPricePromotion() : whitchPrice()}
         </p>
       </div>
       <div className="w-1/2 relative bg-white">

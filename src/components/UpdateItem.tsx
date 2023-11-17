@@ -184,9 +184,6 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
                 item={editedItem}
                 handleChange={handleInputChange}
                 handleCheckboxChange={handleCheckboxChange}
-                isSizeDisabled={false}
-                isSubCategoryDisabled={false}
-                isPromotionDisabled={false}
                 handleSubmit={handleFormSubmit}
               />
 

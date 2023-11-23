@@ -6,6 +6,7 @@ import axios from "axios";
 import { ListItens } from "../components/ListItens";
 import AddItens from "../components/AddItens";
 import { UpdateItem } from "../components/UpdateItem";
+import { API_URL } from "../services/api";
 
 interface Item {
   id: number;
@@ -24,7 +25,7 @@ const Admin = () => {
 
   const getItems = () => {
     axios
-      .get("http://localhost:3001/itens/")
+      .get(API_URL)
       .then((response) => {
         setItems(response.data);
       })

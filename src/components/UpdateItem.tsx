@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import FormItens from './FormItens';
+import { API_URL } from '../services/api';
 
 interface ListItensProps {
   items: {
@@ -121,7 +122,7 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
       };
 
       const response = await axios.post(
-        'http://localhost:3001/itens/update',
+        API_URL,
         updatedItem
       );
 
@@ -153,7 +154,7 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
     const id = itemId.toString();
 
     try {
-      const response = await axios.delete('http://localhost:3001/itens', {
+      const response = await axios.delete(API_URL, {
         data: { id: id },
       });
 

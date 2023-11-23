@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from './api';
 
 interface LoginProps {
   authenticate: () => void;
@@ -15,7 +16,7 @@ const Login: React.FC<LoginProps> = ({ authenticate }) => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3001/admin/login', {
+      const response = await axios.post(API_URL, {
         username,
         password,
       });

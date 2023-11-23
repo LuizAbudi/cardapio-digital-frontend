@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, ChangeEvent } from 'react';
+import { API_URL } from '../services/api';
 
 interface Item {
   id: number;
@@ -80,7 +81,7 @@ const AddItens = () => {
 
     try {
 
-      const response = await axios.post('http://localhost:3001/itens', item);
+      const response = await axios.post(API_URL, item);
       console.log('resposta do servidor:', response);
 
     } catch (error) {

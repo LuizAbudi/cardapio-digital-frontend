@@ -2,7 +2,7 @@ import axios from 'axios'
 import { TItemsResponseType } from '../types/items'
 
 const api = axios.create({
-	baseURL: 'http://177.93.130.132:3001',
+	baseURL: 'https://a40f-177-93-130-132.ngrok-free.app',
 })
 
 export const getItems = async () => {

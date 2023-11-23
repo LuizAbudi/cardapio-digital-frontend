@@ -25,7 +25,7 @@ const Admin = () => {
 
   const getItems = () => {
     axios
-      .get(API_URL)
+      .get(`${API_URL}/itens/`)
       .then((response) => {
         setItems(response.data);
       })

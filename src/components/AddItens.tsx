@@ -81,7 +81,7 @@ const AddItens = () => {
 
     try {
 
-      const response = await axios.post(API_URL, item);
+      const response = await axios.post(`${API_URL}/itens`, item);
       console.log('resposta do servidor:', response);
 
     } catch (error) {

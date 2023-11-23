@@ -122,7 +122,7 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
       };
 
       const response = await axios.post(
-        API_URL,
+        `${API_URL}/itens/update`,
         updatedItem
       );
 
@@ -154,7 +154,7 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
     const id = itemId.toString();
 
     try {
-      const response = await axios.delete(API_URL, {
+      const response = await axios.delete(`${API_URL}/itens`, {
         data: { id: id },
       });
 

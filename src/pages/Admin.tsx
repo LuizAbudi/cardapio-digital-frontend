@@ -63,6 +63,10 @@ const Admin = () => {
     setListContent(false);
   };
 
+  const onClose = () => {
+    setAddContent(false);
+  }
+
   return (
     <div className="bg-wineColor min-h-screen">
       <div className="flex flex-col md:flex-row justify-between p-4">
@@ -93,7 +97,7 @@ const Admin = () => {
           </div>
         </div>
         {listContent && <ListItens items={items} />}
-        {addContent && <AddItens />}
+        {addContent && <AddItens onClose={onClose}/>}
         {updateContent && <UpdateItem items={items} />}
       </div>
     </div>

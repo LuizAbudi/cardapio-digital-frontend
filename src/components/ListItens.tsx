@@ -15,30 +15,45 @@ interface ListItensProps {
   }[];
 }
 
+const NoItemsFoundMessage: React.FC = () => (
+  <p className="text-center text-black font-bold mb-4 bg-white w-full rounded-xl">
+    Nenhum item encontrado!
+  </p>
+);
+
 export const ListItens: React.FC<ListItensProps> = ({ items }) => {
   const verifyPromotion = (isPromotion: boolean | undefined) => {
     return isPromotion ? "Sim" : "Não";
   };
 
   const [searchItem, setSearchItem] = useState("");
-  const [searchResults, setSearchResults] = useState<
-    ListItensProps["items"] | null
-  >(null);
+  const [searchCategory, setSearchCategory] = useState("");
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchItem(e.target.value);
   };
 
+  const handleCategory = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSearchCategory(e.target.value);
+  };
+
   const searchItemSubmited = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(searchItem);
-
-    const results = items.filter((item) =>
-      item.name.toLowerCase().includes(searchItem.toLowerCase())
-    );
-
-    setSearchResults(results.length > 0 ? results : null);
   };
+
+  const filteredItems = items.filter((item) => {
+    const nameMatch = item.name
+      .toLowerCase()
+      .includes(searchItem.toLowerCase());
+    const categoryMatch = item.category
+      .toLowerCase()
+      .includes(searchCategory.toLowerCase());
+
+    // Combina ambas as condições
+    return nameMatch && categoryMatch;
+  });
+
+  const displayItems = filteredItems.length > 0 ? filteredItems : items;
 
   return (
     <div className="overflow-x-auto p-4">
@@ -56,15 +71,20 @@ export const ListItens: React.FC<ListItensProps> = ({ items }) => {
             className="border-2 border-black rounded-lg p-2"
             onChange={handleSearch}
           />
-          <button
-            type="submit"
-            className="text-black bg-gray-200 font-bold py-2 px-4 rounded"
+          <select
+            className="border-2 border-black rounded-lg p-2 ml-2"
+            onChange={handleCategory}
           >
-            Pesquisar
-          </button>
+            <option value="">Todas as Categorias</option>
+            <option value="Porções">Porções</option>
+            <option value="Bebidas">Bebidas</option>
+            <option value="Drinks">Drinks</option>
+            <option value="Doses">Doses</option>
+          </select>
         </div>
       </form>
       <div className="min-w-full overflow-hidden overflow-x-auto">
+        {filteredItems.length === 0 && <NoItemsFoundMessage />}
         <table className="min-w-full bg-white border-black rounded-xl">
           <thead>
             <tr>
@@ -86,7 +106,7 @@ export const ListItens: React.FC<ListItensProps> = ({ items }) => {
             </tr>
           </thead>
           <tbody>
-            {(searchResults || items).map((item, index) => (
+            {displayItems.map((item, index) => (
               <tr
                 key={item.id}
                 className={index % 2 === 0 ? "bg-white" : "bg-gray-500"}
@@ -100,9 +120,9 @@ export const ListItens: React.FC<ListItensProps> = ({ items }) => {
                 <td className="py-2 px-4 border-b border-r border-black text-left">
                   {item.subCategory}
                 </td>
-                <td className="py-2 px-4 border-b border-r border-black text-left">{`R$${item.price.toFixed(
-                  2
-                )}`}</td>
+                <td className="py-2 px-4 border-b border-r border-black text-left">
+                  {`R$${item.price.toFixed(2)}`}
+                </td>
                 <td className="py-2 px-4 border-b border-r border-black text-left">
                   {verifyPromotion(item.isPromotion)}
                 </td>

@@ -7,7 +7,7 @@ const Porcoes = () => {
   const type = "Porções";
 
   return (
-    <div className="bg-wineColor min-h-screen overflow-x-hidden">
+    <div className="bg-wineColor min-h-screen">
       <div className="flex flex-col md:flex-row justify-between p-4">
         <div className="flex flex-row items-center justify-start space-x-4 md:space-x-8">
           <img

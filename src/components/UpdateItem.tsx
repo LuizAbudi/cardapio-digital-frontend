@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import FormItens from './FormItens';
-import { API_URL } from '../services/api';
+import React, { useState } from "react";
+import axios from "axios";
+import FormItens from "./FormItens";
+import { API_URL } from "../services/api";
 
 interface ListItensProps {
   items: {
@@ -15,6 +15,7 @@ interface ListItensProps {
     size?: string;
     subCategory?: string;
     isPromotion?: boolean;
+    pricePromotion?: number;
   }[];
 }
 
@@ -29,6 +30,7 @@ interface EditedItem {
   size?: string;
   subCategory?: string;
   isPromotion?: boolean;
+  pricePromotion?: number;
 }
 
 type EditedItemKey = keyof EditedItem;
@@ -37,15 +39,16 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
   const [editingItemId, setEditingItemId] = useState<number | null>(null);
   const [editedItem, setEditedItem] = useState<EditedItem>({
     id: 0,
-    name: '',
-    description: '',
+    name: "",
+    description: "",
     price: 0,
-    category: '',
+    category: "",
     subPrice: 0,
-    image: '',
-    size: '',
-    subCategory: '',
+    image: "",
+    size: "",
+    subCategory: "",
     isPromotion: false,
+    pricePromotion: 0,
   });
 
   const handleEditClick = (itemId: number) => {
@@ -67,24 +70,27 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
     setEditingItemId(null);
     setEditedItem({
       id: 0,
-      name: '',
-      description: '',
+      name: "",
+      description: "",
       price: 0,
-      category: '',
+      category: "",
       subPrice: 0,
-      image: '',
-      size: '',
-      subCategory: '',
+      image: "",
+      size: "",
+      subCategory: "",
       isPromotion: false,
+      pricePromotion: 0,
     });
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value } = e.target;
 
-    if (name === 'price' || name === 'subPrice') {
+    if (name === "price" || name === "subPrice") {
       if (!/^\d+$/.test(value)) {
         return;
       }
@@ -92,9 +98,8 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
 
     setEditedItem((prevItem) => ({
       ...prevItem,
-      [name as EditedItemKey]: value !== null ? value : '',
+      [name as EditedItemKey]: value !== null ? value : "",
     }));
-
   };
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -104,7 +109,7 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
       ...prevItem,
       [name as EditedItemKey]: checked,
     }));
-  }
+  };
 
   const handleSaveEdit = async (itemId: number) => {
     try {
@@ -119,33 +124,31 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
         subCategory: editedItem.subCategory,
         size: editedItem.size,
         isPromotion: editedItem.isPromotion,
+        pricePromotion: editedItem.pricePromotion,
       };
 
-      const response = await axios.post(
-        `${API_URL}/itens/update`,
-        updatedItem
-      );
+      const response = await axios.post(`${API_URL}/itens/update`, updatedItem);
 
       if (response.status === 200) {
-        console.log('Item atualizado com sucesso!');
+        console.log("Item atualizado com sucesso!");
       } else {
-        console.error('Falha ao atualizar o item:', response.statusText);
+        console.error("Falha ao atualizar o item:", response.statusText);
       }
     } catch (error) {
-      console.error('Erro durante a atualização do item:', error);
+      console.error("Erro durante a atualização do item:", error);
     }
 
     setEditingItemId(null);
     setEditedItem({
       id: 0,
-      name: '',
-      description: '',
+      name: "",
+      description: "",
       price: 0,
-      category: '',
+      category: "",
       subPrice: 0,
-      image: '',
-      size: '',
-      subCategory: '',
+      image: "",
+      size: "",
+      subCategory: "",
       isPromotion: false,
     });
   };
@@ -158,16 +161,14 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
         data: { id: id },
       });
 
-      console.log('Item deletado: ', response);
-
+      console.log("Item deletado: ", response);
     } catch (error) {
-      console.log('Erro:', error);
+      console.log("Erro:", error);
     }
   };
-  
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     if (editingItemId !== null) {
       await handleSaveEdit(editingItemId);
@@ -179,9 +180,11 @@ export const UpdateItem: React.FC<ListItensProps> = ({ items }) => {
       <div className="max-w-2xl mx-auto bg-white p-8 rounded-md shadow-md mt-4">
         {editingItemId !== null ? (
           <div>
-            <h2 className="text-2xl text-gray-800 font-bold mb-4">Editar Item</h2>
+            <h2 className="text-2xl text-gray-800 font-bold mb-4">
+              Editar Item
+            </h2>
             <form>
-              <FormItens 
+              <FormItens
                 item={editedItem}
                 handleChange={handleInputChange}
                 handleCheckboxChange={handleCheckboxChange}

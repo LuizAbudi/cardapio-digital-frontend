@@ -32,6 +32,7 @@ const ItensPromotion = ({ type }: { type: string }) => {
                 name={item.name}
                 description={item.description}
                 price={item.price}
+                subPrice={item.subPrice}
                 imageUrl={item.image}
                 pricePromotion={item.pricePromotion}
               />

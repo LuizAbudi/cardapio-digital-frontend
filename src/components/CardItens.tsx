@@ -43,6 +43,16 @@ const CardItem: React.FC<CardItemProps> = ({
 
   const formattedPricePromotion = () => {
     if (pricePromotion) {
+      if (subPrice) {
+        return (
+          <div>
+            <p style={{ textDecorationLine: "line-through" }}>
+              {`Inteira: R$${price?.toFixed(2).replace(".", ",")}`}
+            </p>
+            <p>{`Inteira: R$${pricePromotion.toFixed(2).replace(".", ",")}`}</p>
+          </div>
+        );
+      }
       return (
         <div>
           <p style={{ textDecorationLine: "line-through" }}>

@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useState, ChangeEvent } from "react";
 import { API_URL } from "../services/api";
-import { on } from "events";
 
 interface Item {
   id: number;

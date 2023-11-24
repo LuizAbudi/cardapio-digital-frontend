@@ -28,7 +28,6 @@ function CardComponent({
       onClick={() => handleClick(title)}
       className="focus:outline-none focus:shadow-outline rounded-xl relative overflow-hidden transform transition-transform duration-300"
     >
-      {/* Overlay */}
       <div className="absolute flex items-center justify-center w-full h-full bg-black/30 rounded-xl text-white ">
         <p
           className={`font-bold text-2xl text-center ${
